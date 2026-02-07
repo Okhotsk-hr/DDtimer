@@ -60,4 +60,6 @@ void draw() {
     text(timecount1 / 60 + "：" + (timecount1 - (timecount1 / 60) * 60), width / 4 - 100, height / 2);
     text(timecount2 / 60 + "：" + (timecount2 - (timecount2 / 60) * 60),(width / 4) * 3 - 100, height / 2);
     textSize(30);
+    
+    number();
 }
