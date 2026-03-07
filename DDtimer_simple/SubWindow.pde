@@ -21,11 +21,15 @@ class SubWindow extends PApplet {
     void draw() {
         background(255);
         
-        
         //整理番号を表示
         textSize(50);
         text(number2, width / 4 , 100);
         text(number1,(width / 4) * 3 , 100);
+        textSize(30);
+        
+        textSize(50);
+        text("外回り", width / 4 - 50 , 300);
+        text("内回り",(width / 4) * 3 - 50 , 300);
         textSize(30);
         
         //タイマーの動作に関わらず時間を表示

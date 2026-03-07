@@ -28,34 +28,7 @@ void setup() {
 }
 
 void draw() {
-    //現在の秒数
-    //println(millis() / 1000);
     background(255);
-    // if (mousePressed) {
-    //     mouseclick = true;
-// } else{//マウスが離されたとき
-    //     if (mouseclick) {
-    //         if (mouseX <=  width / 2) {
-    //             if (timermove1) {
-    //                 println(millis() / 1000 - starttime1);
-    //             } else{
-    //                 starttime1 = millis() / 1000;
-    //             }
-    //             timermove1 = !timermove1;
-    //         }
-    //         if (mouseX >=  width / 2) {
-    //             if (timermove2) {
-    //                 println(millis() / 1000 - starttime2);
-    //             } else{
-    //                 starttime2 = millis() / 1000;
-    //             }
-    //             timermove2 = !timermove2;
-    //         }
-    //     }
-    //     mouseclick = false;
-// }
-    //println(millis() / 1000 - starttime);
-    //println(timermove);
     
     //スタート・ストップボタン
     if (btn(width / 4 - 150,700,300,50)) {
@@ -108,6 +81,11 @@ void draw() {
     textSize(100);
     text(timecount1 / 60 + "：" + (timecount1 - (timecount1 / 60) * 60), width / 4 - 100, height / 2);
     text(timecount2 / 60 + "：" + (timecount2 - (timecount2 / 60) * 60),(width / 4) * 3 - 100, height / 2);
+    textSize(30);
+    
+    textSize(50);
+    text("内回り", width / 4 - 50, 300);
+    text("外回り",(width / 4) * 3 - 50, 300);
     textSize(30);
     
     number();
