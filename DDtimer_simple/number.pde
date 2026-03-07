@@ -2,7 +2,7 @@ int number1 = 0;
 int number2 = 0;
 boolean mouse = false;
 void number() {
-    // ...existing code...
+    //整理番号を表示
     textSize(50);
     text(number1, width / 4 , 100);
     text(number2,(width / 4) * 3 , 100);
@@ -22,19 +22,6 @@ void number() {
     }
     
     
-}
-
-boolean btn(int x, int y, int w, int h) {
-    rect(x, y, w, h);
-    if (mousePressed) {
-        if (x <=  mouseX &&  mouseX <=  x + w &&  y <=  mouseY &&  mouseY <=  y + h) {
-            if (!mouse) {
-                mouse = true;
-                return(true);
-            }
-        } 
-    }
-    return(false);
 }
 
 void mouseReleased() {

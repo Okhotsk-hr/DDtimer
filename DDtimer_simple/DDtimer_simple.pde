@@ -2,10 +2,12 @@
 boolean timermove1 = false;
 int starttime1;
 int timecount1 = 0;
+int savetime1 = 0;
 //タイマー2
 boolean timermove2 = false;
 int starttime2;
 int timecount2 = 0;
+int savetime2 = 0;
 //その他
 boolean mouseclick = false;
 
@@ -21,31 +23,68 @@ void draw() {
     //現在の秒数
     //println(millis() / 1000);
     background(255);
-    if (mousePressed) {
-        mouseclick = true;
-    } else{//マウスが離されたとき
-        if (mouseclick) {
-            if (mouseX <=  width / 2) {
-                if (timermove1) {
-                    println(millis() / 1000 - starttime1);
-                } else{
-                    starttime1 = millis() / 1000;
-                }
-                timermove1 = !timermove1;
-            }
-            if (mouseX >=  width / 2) {
-                if (timermove2) {
-                    println(millis() / 1000 - starttime2);
-                } else{
-                    starttime2 = millis() / 1000;
-                }
-                timermove2 = !timermove2;
-            }
-        }
-        mouseclick = false;
-    }
+    // if (mousePressed) {
+    //     mouseclick = true;
+// } else{//マウスが離されたとき
+    //     if (mouseclick) {
+    //         if (mouseX <=  width / 2) {
+    //             if (timermove1) {
+    //                 println(millis() / 1000 - starttime1);
+    //             } else{
+    //                 starttime1 = millis() / 1000;
+    //             }
+    //             timermove1 = !timermove1;
+    //         }
+    //         if (mouseX >=  width / 2) {
+    //             if (timermove2) {
+    //                 println(millis() / 1000 - starttime2);
+    //             } else{
+    //                 starttime2 = millis() / 1000;
+    //             }
+    //             timermove2 = !timermove2;
+    //         }
+    //     }
+    //     mouseclick = false;
+// }
     //println(millis() / 1000 - starttime);
     //println(timermove);
+    
+    //スタート・ストップボタン
+    if (btn(width / 4 - 150,700,300,50)) {
+        if (timermove1) {
+            println(millis() / 1000 - starttime1);
+            savetime1 = timecount1;
+            println("タイマー1ストップ");
+        } else{
+            starttime1 = millis() / 1000 - savetime1;
+            println("タイマー1スタート");
+        }
+        timermove1 = !timermove1;
+    }
+    if (btn((width / 4) * 3 - 150,700,300,50)) {
+        if (timermove2) {
+            println(millis() / 1000 - starttime2);
+            savetime2 = timecount2;
+            println("タイマー2ストップ");
+        } else{
+            starttime2 = millis() / 1000 - savetime2;
+            println("タイマー2スタート");
+        }
+        timermove2 = !timermove2;
+    }
+    
+    //リセットボタン
+    if (btn(width / 4 - 150,800,300,50)) {
+        starttime1 = millis() / 1000;
+        timecount1 = 0;
+        println("タイマー1リセット");
+    }
+    if (btn((width / 4) * 3 - 150,800,300,50)) {
+        starttime2 = millis() / 1000;
+        timecount2 = 0;
+        println("タイマー2リセット");
+    }
+    
     
     //タイマー1が動作状態なら、時間を更新する
     if (timermove1) {
