@@ -25,6 +25,8 @@ void setup() {
     textFont(font);
     fill(0);
     textSize(30);
+    
+    thread("write_num");
 }
 
 void draw() {
