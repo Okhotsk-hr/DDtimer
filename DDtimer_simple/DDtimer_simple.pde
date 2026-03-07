@@ -11,8 +11,16 @@ int savetime2 = 0;
 //その他
 boolean mouseclick = false;
 
-void setup() {
+SubWindow subWindow;
+
+void settings() {
     fullScreen();
+    //size(1200, 700);
+}
+
+void setup() {
+    //size(1200, 700);
+    subWindow = new SubWindow();
     PFont font = createFont("Meiryo", 50);
     textFont(font);
     fill(0);
@@ -74,6 +82,7 @@ void draw() {
     }
     
     //リセットボタン
+    fill(255,0,0);
     if (btn(width / 4 - 150,800,300,50)) {
         starttime1 = millis() / 1000;
         timecount1 = 0;
@@ -84,6 +93,7 @@ void draw() {
         timecount2 = 0;
         println("タイマー2リセット");
     }
+    fill(0);
     
     
     //タイマー1が動作状態なら、時間を更新する
