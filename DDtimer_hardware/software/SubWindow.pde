@@ -6,11 +6,11 @@ class SubWindow extends PApplet {
     }
     
     void settings() {
-        size(1160, 830);
+        size(1920, 1050);
     }
     
     void setup() {
-        surface.setLocation( -1500, 0);
+        surface.setLocation( -220, -1080);
         
         PFont font = createFont("Meiryo", 50);
         textFont(font);
